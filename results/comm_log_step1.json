@@ -1,0 +1,469 @@
+{
+ "DP (ZeRO-0)": [
+  {
+   "op": "all_reduce",
+   "tag": "grad_allreduce",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 1984,
+   "bytes_sent_by_rank11": 127968
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_allreduce",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 1984,
+   "bytes_sent_by_rank11": 768304
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_allreduce",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 1984,
+   "bytes_sent_by_rank11": 768304
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_allreduce",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 1984,
+   "bytes_sent_by_rank11": 768304
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_allreduce",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 1984,
+   "bytes_sent_by_rank11": 768304
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_allreduce",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 1984,
+   "bytes_sent_by_rank11": 158720
+  }
+ ],
+ "ZeRO-1": [
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 63984
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 79360
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_norm",
+   "unit": null,
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 32,
+   "bytes_sent_by_rank11": 4
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 79360
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 63984
+  }
+ ],
+ "ZeRO-2": [
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 63984
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 79360
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_norm",
+   "unit": null,
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 32,
+   "bytes_sent_by_rank11": 4
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 79360
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_allgather_after_update",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 63984
+  }
+ ],
+ "ZeRO-3": [
+  {
+   "op": "all_gather",
+   "tag": "param_gather_fwd",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 79360
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_fwd",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_fwd",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_fwd",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_fwd",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_fwd",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 63984
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_bwd",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 63984
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "head",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 63984
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_bwd",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block3",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_bwd",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block2",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_bwd",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block1",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_bwd",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "block0",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 384152
+  },
+  {
+   "op": "all_gather",
+   "tag": "param_gather_bwd",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 79360
+  },
+  {
+   "op": "reduce_scatter",
+   "tag": "grad_reduce_scatter",
+   "unit": "embed",
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 992,
+   "bytes_sent_by_rank11": 79360
+  },
+  {
+   "op": "all_reduce",
+   "tag": "grad_norm",
+   "unit": null,
+   "step": 0,
+   "phase": null,
+   "p2p_sends": 32,
+   "bytes_sent_by_rank11": 4
+  }
+ ]
+}

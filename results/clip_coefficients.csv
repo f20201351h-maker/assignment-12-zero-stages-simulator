@@ -1,0 +1,4 @@
+step,DP,ZeRO,same_in_float64,same_after_rounding_to_fp32,scaled_grad_bitwise_equal
+1,0.12404414538705444,0.12404413969880089,False,True,True
+2,0.2492801877283814,0.24928018784379405,False,True,True
+3,0.33545621691635336,0.3354562371666007,False,True,True

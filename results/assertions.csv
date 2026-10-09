@@ -1,0 +1,103 @@
+check,passed,detail
+parameter count,True,867072
+32 ranks per stage,True,
+DP (ZeRO-0): bytes from rank state == course formula,True,"(16.0, 16.0)"
+DP (ZeRO-0): 8-rank bytes/param == lesson table,True,
+ZeRO-1: bytes from rank state == course formula,True,"(4.375, 4.375)"
+ZeRO-1: 8-rank bytes/param == lesson table,True,
+ZeRO-2: bytes from rank state == course formula,True,"(2.4375, 2.4375)"
+ZeRO-2: 8-rank bytes/param == lesson table,True,
+ZeRO-3: bytes from rank state == course formula,True,"(0.5, 0.5)"
+ZeRO-3: 8-rank bytes/param == lesson table,True,
+32 distinct local gradients,True,
+RS + AG == all-reduce (fp32 rounding only),True,3.814697265625e-06
+every rank ends with the same reduced vector,True,
+ring sends 2(N-1)/N of the buffer per rank,True,
+DP replicas identical after 3 steps (all 5 tensors),True,"{'param16': 0.0, 'master32': 0.0, 'adam_m': 0.0, 'adam_v': 0.0}"
+DP loss at step 1 == single-device loss,True,"{'loss_step1_dp': 5.5700579434633255, 'loss_step1_single_device': 5.570057392120361, 'abs_loss_diff': 5.513429641723633e-07, 'fp32_average_of_32_local_grads_rel_err': 1.1275674767794614e-07, 'dp_bf16_ring_average_rel_err': 0.005618313212666283, 'single_device_bf16_cast_rel_err': 0.0017321804063951058, 'one_bf16_rounding': 0.001953125}"
+averaging 32 micro-batch gradients == one full-batch gradient (fp32),True,"{'loss_step1_dp': 5.5700579434633255, 'loss_step1_single_device': 5.570057392120361, 'abs_loss_diff': 5.513429641723633e-07, 'fp32_average_of_32_local_grads_rel_err': 1.1275674767794614e-07, 'dp_bf16_ring_average_rel_err': 0.005618313212666283, 'single_device_bf16_cast_rel_err': 0.0017321804063951058, 'one_bf16_rounding': 0.001953125}"
+DP's bf16 ring average stays within a few bf16 roundings,True,"{'loss_step1_dp': 5.5700579434633255, 'loss_step1_single_device': 5.570057392120361, 'abs_loss_diff': 5.513429641723633e-07, 'fp32_average_of_32_local_grads_rel_err': 1.1275674767794614e-07, 'dp_bf16_ring_average_rel_err': 0.005618313212666283, 'single_device_bf16_cast_rel_err': 0.0017321804063951058, 'one_bf16_rounding': 0.001953125}"
+ZeRO-1 persistent bytes == formula,True,
+ZeRO-1 optimizer work is 1/32,True,
+ZeRO-1 replicas of bf16 weights agree after all-gather,True,
+ZeRO-2 persistent bytes == formula,True,
+ZeRO-2 optimizer work is 1/32,True,
+ZeRO-2 replicas of bf16 weights agree after all-gather,True,
+ZeRO-2 temporary peak is one unit's bf16 gradient bucket,True,
+ZeRO-3 persistent bytes == formula,True,
+ZeRO-3 optimizer work is 1/32,True,
+ZeRO-3 gathers every unit twice per step,True,12
+ZeRO-3: between forward and backward rank holds only its 1/32 weight shard,True,54192
+ZeRO-3 temporary peak = gathered unit + its gradient bucket,True,
+ZeRO-3 trace returns to zero temporary bytes after every unit,True,
+DP (ZeRO-0): update matches DP within 1e-05,True,"{'stage': 'DP (ZeRO-0)', 'step1_avg_grad_bitwise_equal': True, 'step1_max_abs_diff': 0.0, 'step3_max_abs_diff': 0.0, 'step3_mean_abs_diff': 0.0, 'step3_elements_differing': 0, 'step3_max_abs_diff_no_clip': 0.0, 'step3_elements_differing_no_clip': 0, 'clip_coef_step1': 0.12404414538705444, 'same_loss_all_steps': True, 'final_bf16_weights_bitwise_equal': True, 'result': 'PASS'}"
+ZeRO-1: update matches DP within 1e-05,True,"{'stage': 'ZeRO-1', 'step1_avg_grad_bitwise_equal': True, 'step1_max_abs_diff': 0.0, 'step3_max_abs_diff': 1.862645149230957e-09, 'step3_mean_abs_diff': 1.815901927795533e-14, 'step3_elements_differing': 39, 'step3_max_abs_diff_no_clip': 1.862645149230957e-09, 'step3_elements_differing_no_clip': 44, 'clip_coef_step1': 0.12404413969880089, 'same_loss_all_steps': True, 'final_bf16_weights_bitwise_equal': True, 'result': 'PASS'}"
+ZeRO-2: update matches DP within 1e-05,True,"{'stage': 'ZeRO-2', 'step1_avg_grad_bitwise_equal': True, 'step1_max_abs_diff': 0.0, 'step3_max_abs_diff': 1.862645149230957e-09, 'step3_mean_abs_diff': 1.815901927795533e-14, 'step3_elements_differing': 39, 'step3_max_abs_diff_no_clip': 1.862645149230957e-09, 'step3_elements_differing_no_clip': 44, 'clip_coef_step1': 0.12404413969880089, 'same_loss_all_steps': True, 'final_bf16_weights_bitwise_equal': True, 'result': 'PASS'}"
+ZeRO-3: update matches DP within 1e-05,True,"{'stage': 'ZeRO-3', 'step1_avg_grad_bitwise_equal': True, 'step1_max_abs_diff': 0.0, 'step3_max_abs_diff': 1.862645149230957e-09, 'step3_mean_abs_diff': 1.815901927795533e-14, 'step3_elements_differing': 39, 'step3_max_abs_diff_no_clip': 1.862645149230957e-09, 'step3_elements_differing_no_clip': 44, 'clip_coef_step1': 0.12404413969880089, 'same_loss_all_steps': True, 'final_bf16_weights_bitwise_equal': True, 'result': 'PASS'}"
+ZeRO stages share one clip coefficient,True,
+all kernel differences sit in the vector-loop tail of a slice,True,
+Adam on 32 slices == Adam on the whole vector at step 1,True,
+later differences are a few fp32 ulps,True,
+"DP (ZeRO-0): real tensors == meta construction == formula, on all 32 ranks",True,
+"ZeRO-1: real tensors == meta construction == formula, on all 32 ranks",True,
+"ZeRO-2: real tensors == meta construction == formula, on all 32 ranks",True,
+"ZeRO-3: real tensors == meta construction == formula, on all 32 ranks",True,
+stage ordering DP > Z1 > Z2 > Z3,True,
+DP (ZeRO-0): measured comm == ring formula,True,
+DP (ZeRO-0): comm within 1/N of course value,True,
+ZeRO-1: measured comm == ring formula,True,
+ZeRO-1: comm within 1/N of course value,True,
+ZeRO-2: measured comm == ring formula,True,
+ZeRO-2: comm within 1/N of course value,True,
+ZeRO-3: measured comm == ring formula,True,
+ZeRO-3: comm within 1/N of course value,True,
+model FLOPs identical in all stages,True,
+FLOP counter matches analytic forward count,True,
+DP (ZeRO-0) N=1: measured == formula,True,
+DP (ZeRO-0) N=2: measured == formula,True,
+DP (ZeRO-0) N=4: measured == formula,True,
+DP (ZeRO-0) N=8: measured == formula,True,
+DP (ZeRO-0) N=16: measured == formula,True,
+DP (ZeRO-0) N=32: measured == formula,True,
+DP (ZeRO-0) N=64: measured == formula,True,
+ZeRO-1 N=1: measured == formula,True,
+ZeRO-1 N=2: measured == formula,True,
+ZeRO-1 N=4: measured == formula,True,
+ZeRO-1 N=8: measured == formula,True,
+ZeRO-1 N=16: measured == formula,True,
+ZeRO-1 N=32: measured == formula,True,
+ZeRO-1 N=64: measured == formula,True,
+ZeRO-2 N=1: measured == formula,True,
+ZeRO-2 N=2: measured == formula,True,
+ZeRO-2 N=4: measured == formula,True,
+ZeRO-2 N=8: measured == formula,True,
+ZeRO-2 N=16: measured == formula,True,
+ZeRO-2 N=32: measured == formula,True,
+ZeRO-2 N=64: measured == formula,True,
+ZeRO-3 N=1: measured == formula,True,
+ZeRO-3 N=2: measured == formula,True,
+ZeRO-3 N=4: measured == formula,True,
+ZeRO-3 N=8: measured == formula,True,
+ZeRO-3 N=16: measured == formula,True,
+ZeRO-3 N=32: measured == formula,True,
+ZeRO-3 N=64: measured == formula,True,
+30B DP (ZeRO-0) N=8 matches lesson,True,"(447.0348358154297, 447.0)"
+30B DP (ZeRO-0) N=16 matches lesson,True,"(447.0348358154297, 447.0)"
+30B DP (ZeRO-0) N=32 matches lesson,True,"(447.0348358154297, 447.0)"
+30B DP (ZeRO-0) N=64 matches lesson,True,"(447.0348358154297, 447.0)"
+30B ZeRO-1 N=8 matches lesson,True,"(153.66822481155396, 153.7)"
+30B ZeRO-1 N=16 matches lesson,True,"(132.7134668827057, 132.7)"
+30B ZeRO-1 N=32 matches lesson,True,"(122.23608791828156, 122.2)"
+30B ZeRO-1 N=64 matches lesson,True,"(116.99739843606949, 117.0)"
+30B ZeRO-2 N=8 matches lesson,True,"(104.77378964424133, 104.8)"
+30B ZeRO-2 N=16 matches lesson,True,"(80.32657206058502, 80.3)"
+30B ZeRO-2 N=32 matches lesson,True,"(68.10296326875687, 68.1)"
+30B ZeRO-2 N=64 matches lesson,True,"(61.99115887284279, 62.0)"
+30B ZeRO-3 N=8 matches lesson,True,"(55.87935447692871, 55.9)"
+30B ZeRO-3 N=16 matches lesson,True,"(27.939677238464355, 27.9)"
+30B ZeRO-3 N=32 matches lesson,True,"(13.969838619232178, 14.0)"
+30B ZeRO-3 N=64 matches lesson,True,"(6.984919309616089, 7.0)"
+4 B/param floor fills a 74.5 GiB card at 20B parameters,True,20000000000.0
+at N=32 only ZeRO-2 and ZeRO-3 fit,True,
+activations identical in every stage,True,
+removing a collective breaks agreement,True,

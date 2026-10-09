@@ -1,0 +1,238 @@
+{
+  "model": {
+    "config": {
+      "vocab_size": 256,
+      "block_size": 64,
+      "n_layer": 4,
+      "n_head": 4,
+      "d_model": 128
+    },
+    "params": 867072,
+    "units": {
+      "embed": 40960,
+      "block0": 198272,
+      "block1": 198272,
+      "block2": 198272,
+      "block3": 198272,
+      "head": 33024
+    }
+  },
+  "run": {
+    "world": 32,
+    "probe_rank": 11,
+    "steps": 3,
+    "micro_batch": 2,
+    "global_batch_sequences": 64,
+    "tokens_per_step": 4096,
+    "optimizer": {
+      "lr": 0.001,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "eps": 1e-08,
+      "clip": 1.0
+    },
+    "init_seed": 0,
+    "data_seed": 1,
+    "torch": "2.14.0+cpu",
+    "python": "3.14.4",
+    "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "ram_GiB": 7.79,
+    "corpus_sha256": "05c564f3bcbfeb12b28533ad9c7f906cea04336ca0fc348232f5ce3190e0ad27",
+    "corpus_bytes": 4060
+  },
+  "rank11_owned_slices": {
+    "embed": [
+      {
+        "unit": "embed",
+        "unit_flat_range": [
+          14080,
+          15360
+        ],
+        "param": "wte",
+        "shape": [
+          256,
+          128
+        ],
+        "local_range": [
+          14080,
+          15360
+        ],
+        "detail": "elements [14080, 15360) of 32768 = rows 110..119 (row-major, 128 cols)"
+      }
+    ],
+    "block0": [
+      {
+        "unit": "block0",
+        "unit_flat_range": [
+          68156,
+          74352
+        ],
+        "param": "mlp.fc.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "local_range": [
+          1596,
+          7792
+        ],
+        "detail": "elements [1596, 7792) of 65536 = rows 12..60 (row-major, 128 cols)"
+      }
+    ],
+    "block1": [
+      {
+        "unit": "block1",
+        "unit_flat_range": [
+          68156,
+          74352
+        ],
+        "param": "mlp.fc.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "local_range": [
+          1596,
+          7792
+        ],
+        "detail": "elements [1596, 7792) of 65536 = rows 12..60 (row-major, 128 cols)"
+      }
+    ],
+    "block2": [
+      {
+        "unit": "block2",
+        "unit_flat_range": [
+          68156,
+          74352
+        ],
+        "param": "mlp.fc.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "local_range": [
+          1596,
+          7792
+        ],
+        "detail": "elements [1596, 7792) of 65536 = rows 12..60 (row-major, 128 cols)"
+      }
+    ],
+    "block3": [
+      {
+        "unit": "block3",
+        "unit_flat_range": [
+          68156,
+          74352
+        ],
+        "param": "mlp.fc.weight",
+        "shape": [
+          512,
+          128
+        ],
+        "local_range": [
+          1596,
+          7792
+        ],
+        "detail": "elements [1596, 7792) of 65536 = rows 12..60 (row-major, 128 cols)"
+      }
+    ],
+    "head": [
+      {
+        "unit": "head",
+        "unit_flat_range": [
+          11352,
+          12384
+        ],
+        "param": "lm_head.weight",
+        "shape": [
+          256,
+          128
+        ],
+        "local_range": [
+          11096,
+          12128
+        ],
+        "detail": "elements [11096, 12128) of 32768 = rows 86..94 (row-major, 128 cols)"
+      }
+    ]
+  },
+  "collective_identity": {
+    "elements": 867072,
+    "max_abs_value": 23.770656406879425,
+    "max_abs_diff_rsag_vs_naive": 3.814697265625e-06,
+    "max_abs_err_rsag_vs_fp64": 4.1425228118896484e-06,
+    "max_abs_err_naive_vs_fp64": 2.905726432800293e-06,
+    "all_32_results_identical": true,
+    "rank11_bytes_sent_ring": 6719808,
+    "rank11_bytes_sent_naive": 107516928,
+    "buffer_bytes": 3468288,
+    "ring_over_buffer": 1.9375,
+    "naive_over_buffer": 31.0,
+    "rs_shard_elements": 27096
+  },
+  "dp_vs_single_device": {
+    "loss_step1_dp": 5.5700579434633255,
+    "loss_step1_single_device": 5.570057392120361,
+    "abs_loss_diff": 5.513429641723633e-07,
+    "fp32_average_of_32_local_grads_rel_err": 1.1275674767794614e-07,
+    "dp_bf16_ring_average_rel_err": 0.005618313212666283,
+    "single_device_bf16_cast_rel_err": 0.0017321804063951058,
+    "one_bf16_rounding": 0.001953125
+  },
+  "losses": {
+    "DP (ZeRO-0)": [
+      5.5700579434633255,
+      4.937951326370239,
+      4.7343791872262955
+    ],
+    "ZeRO-1": [
+      5.5700579434633255,
+      4.937951326370239,
+      4.7343791872262955
+    ],
+    "ZeRO-2": [
+      5.5700579434633255,
+      4.937951326370239,
+      4.7343791872262955
+    ],
+    "ZeRO-3": [
+      5.5700579434633255,
+      4.937951326370239,
+      4.7343791872262955
+    ]
+  },
+  "single_device_losses": [
+    5.570057392120361,
+    4.9380879402160645,
+    4.734200477600098
+  ],
+  "replica_max_diff": {
+    "DP (ZeRO-0)": {
+      "param16": 0.0,
+      "master32": 0.0,
+      "adam_m": 0.0,
+      "adam_v": 0.0
+    },
+    "ZeRO-1": {
+      "param16": 0.0
+    },
+    "ZeRO-2": {
+      "param16": 0.0
+    },
+    "ZeRO-3": {}
+  },
+  "zero3": {
+    "gathers_per_step": 12,
+    "held_params_between_fwd_bwd": 54192,
+    "peak_temp": 793088
+  },
+  "peak_working_set_MiB_after_dp": 882.08984375,
+  "sim_wall_seconds": {
+    "DP (ZeRO-0)": 13.64343870000448,
+    "ZeRO-1": 4.0747322998940945,
+    "ZeRO-2": 3.6335556999547407,
+    "ZeRO-3": 4.995037800050341
+  },
+  "checks_passed": 102,
+  "checks_total": 102
+}

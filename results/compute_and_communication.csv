@@ -1,0 +1,5 @@
+stage,fwd_GFLOP,bwd_GFLOP,adam_elements_rank,adam_elements_cluster,grad_norm_work,sent_per_rank_P,ring_formula_P,course_P,scalar_norm_bytes,collective_calls,p2p_sends_all_ranks
+DP (ZeRO-0),0.226492416,0.452984832,867072,27746304,full grad on every rank,1.9375,1.9375,2,0,6,11904
+ZeRO-1,0.226492416,0.452984832,27096,867072,own shard + scalar all-reduce,1.9375,1.9375,2,4,13,11936
+ZeRO-2,0.226492416,0.452984832,27096,867072,own shard + scalar all-reduce,1.9375,1.9375,2,4,13,11936
+ZeRO-3,0.226492416,0.452984832,27096,867072,own shard + scalar all-reduce,2.90625,2.90625,3,4,19,17888

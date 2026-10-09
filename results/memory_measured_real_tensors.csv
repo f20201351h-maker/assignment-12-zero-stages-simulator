@@ -1,0 +1,5 @@
+stage,bytes_per_rank,MiB_per_rank,B_per_param,all_ranks_equal,cluster_total_MiB,copies_of_state,saved_vs_DP,peak_temp_bytes
+DP (ZeRO-0),13873152,13.23046875,16.0,True,423.375,32.0,0.0%,0
+ZeRO-1,3793440,3.617706298828125,4.375,True,115.7666015625,8.75,72.7%,0
+ZeRO-2,2113488,2.0155792236328125,2.4375,True,64.49853515625,4.875,84.8%,396544
+ZeRO-3,433536,0.4134521484375,0.5,True,13.23046875,1.0,96.9%,793088

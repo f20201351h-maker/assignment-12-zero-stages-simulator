@@ -1,0 +1,5 @@
+stage,step1_avg_grad_bitwise_equal,step1_max_abs_diff,step3_max_abs_diff,step3_mean_abs_diff,step3_elements_differing,step3_max_abs_diff_no_clip,step3_elements_differing_no_clip,clip_coef_step1,same_loss_all_steps,final_bf16_weights_bitwise_equal,result
+DP (ZeRO-0),True,0.0,0.0,0.0,0,0.0,0,0.12404414538705444,True,True,PASS
+ZeRO-1,True,0.0,1.862645149230957e-09,1.815901927795533e-14,39,1.862645149230957e-09,44,0.12404413969880089,True,True,PASS
+ZeRO-2,True,0.0,1.862645149230957e-09,1.815901927795533e-14,39,1.862645149230957e-09,44,0.12404413969880089,True,True,PASS
+ZeRO-3,True,0.0,1.862645149230957e-09,1.815901927795533e-14,39,1.862645149230957e-09,44,0.12404413969880089,True,True,PASS

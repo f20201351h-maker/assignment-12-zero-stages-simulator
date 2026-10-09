@@ -1,0 +1,4 @@
+adam_step,max_abs_diff,elements_differing,of_which_in_last_len_mod_16_of_a_slice
+1,0.0,0,0
+2,1.862645149230957e-09,35,35
+3,3.725290298461914e-09,65,65

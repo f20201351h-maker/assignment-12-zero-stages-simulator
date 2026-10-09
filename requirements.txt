@@ -1,0 +1,8 @@
+# Tested with Python 3.14.4 on Windows 11, CPU only (no CUDA needed).
+torch>=2.6        # tested 2.14.0+cpu; needs saved_tensors_hooks, FlopCounterMode, untyped_storage
+numpy             # tested 2.4.4
+pandas            # tested 3.0.3
+matplotlib        # tested 3.11.2
+psutil            # tested 7.2.2
+pytest            # tested 9.0.3
+jupyter           # nbconvert 7.17.1 used to execute the notebook

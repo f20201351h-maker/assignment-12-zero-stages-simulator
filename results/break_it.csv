@@ -1,0 +1,4 @@
+fault,effect,value
+DP: skip gradient all-reduce,max weight difference between replicas,0.00244140625
+ZeRO-1: skip weight all-gather,max weight difference between replicas,0.00146484375
+ZeRO-3: gather from wrong owner,step-1 mean loss (correct run: 5.57006),5.544490545988083

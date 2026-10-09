@@ -1,0 +1,7 @@
+unit,tensors,params,share,elements_per_rank_shard,divides_by_32
+embed,2,40960,4.7%,1280,True
+block0,12,198272,22.9%,6196,True
+block1,12,198272,22.9%,6196,True
+block2,12,198272,22.9%,6196,True
+block3,12,198272,22.9%,6196,True
+head,3,33024,3.8%,1032,True

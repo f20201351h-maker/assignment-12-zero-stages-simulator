@@ -1,0 +1,5 @@
+stage,N=8 GiB,N=8 course,N=16 GiB,N=16 course,N=32 GiB,N=32 course,N=64 GiB,N=64 course,fits 74.5 GiB at N=32,smallest N that fits (<=1024)
+DP (ZeRO-0),447.03,447.0,447.03,447.0,447.03,447.0,447.03,447.0,False,never
+ZeRO-1,153.67,153.7,132.71,132.7,122.24,122.2,117.0,117.0,False,never
+ZeRO-2,104.77,104.8,80.33,80.3,68.1,68.1,61.99,62.0,True,32
+ZeRO-3,55.88,55.9,27.94,27.9,13.97,14.0,6.98,7.0,True,8
